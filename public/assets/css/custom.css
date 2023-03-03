@@ -1,0 +1,8 @@
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+figure.image figcaption {
+    padding: 3px 5px;
+    font-weight: 700;
+}

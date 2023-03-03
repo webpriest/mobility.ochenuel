@@ -1,0 +1,25 @@
+.navbar-brand-box {
+    padding: 20px 1.5rem 0;
+}
+
+[class*="icofont-"] {
+    font-weight: bold;
+}
+
+[type="submit"] {
+    -webkit-appearance: button;
+    background-color: #d10a11 !important;
+    background-image: none;
+}
+
+[type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [type="file"], [multiple], textarea, select {
+    border-color: #6b7280;
+}
+
+.error {
+    color: #d10a11;
+}
+
+form.delete-form {
+    display: inline-block;
+}
