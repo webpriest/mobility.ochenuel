@@ -57,11 +57,12 @@
                                             <td>{!! Str::limit($bikeshare->content, 100, '...') !!}</td>
                                             <td>
                                                 <a href="{{ route('manager.bikeshare.show', $bikeshare) }}" class="btn btn-outline-success btn-sm" title="View"><i class="icofont-eye"></i></a>
+                                                <a href="{{ route('manager.bikeshare.gallery.index', $bikeshare) }}" class="btn btn-outline-info btn-sm" title="Gallery"><i class="icofont-camera"></i></a>
                                                 <a href="{{ route('manager.bikeshare.edit', $bikeshare) }}" class="btn btn-outline-warning btn-sm"><i class="icofont-edit" title="Edit"></i></a>
                                                 <form class="delete-form" method="POST" action="{{ route('manager.bikeshare.destroy', $bikeshare)}}">
                                                     @method('delete')
                                                     @csrf
-                                                    <button type="submit" onclick="return confirm('Are you sure you want to delete this record?')" class="btn btn-outline-danger btn-sm"><i class="icofont-delete"></i></button>
+                                                    <button type="submit" title="Delete" onclick="return confirm('Are you sure you want to delete this record?')" class="btn btn-outline-danger btn-sm"><i class="icofont-delete"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

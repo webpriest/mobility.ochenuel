@@ -301,6 +301,15 @@
         <script src="{{ asset('vault/js/pages/dashboard.init.js') }}"></script>
         @stack('scripts')
 
+        <script>
+            window.addEventListener('closeModal', event => {
+                $(".deleteFile").modal('hide');
+            });
+            window.addEventListener('openDeleteModal', event => {
+                $(".deleteFile").modal('show');
+            });
+        </script>
+
         <!-- App js -->
         <script src="{{ asset('vault/js/app.js') }}"></script>
         @livewireScripts

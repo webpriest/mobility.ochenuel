@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Manager\BikeshareController;
 use App\Http\Controllers\Manager\DashboardController;
+use App\Http\Controllers\Manager\BikeshareGalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,13 @@ Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
         Route::get('/{bikeshare}/edit', [BikeshareController::class, 'edit'])->name('manager.bikeshare.edit');
         Route::patch('/{bikeshare}', [BikeshareController::class, 'update'])->name('manager.bikeshare.update');
         Route::delete('/{bikeshare}', [BikeshareController::class, 'destroy'])->name('manager.bikeshare.destroy');
+    });
+    
+    // Bike Share Gallery
+    Route::group(['prefix'=>'bikeshare/gallery'], function(){
+        Route::get('/{bikeshare}', [BikeshareGalleryController::class, 'index'])->name('manager.bikeshare.gallery.index');
+        Route::post('/new', [BikeshareGalleryController::class, 'store'])->name('manager.bikeshare.gallery.store');
+        Route::delete('/{gallery}', [BikeshareGalleryController::class, 'destroy'])->name('manager.bikeshare.gallery.destroy');
     });
 });
 

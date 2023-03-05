@@ -12,6 +12,22 @@
     background-image: none;
 }
 
+button.delete {
+    -webkit-appearance: button;
+    background-color: #d10a11 !important;
+}
+
+button.info {
+    -webkit-appearance: button;
+    background-color: #10a2bc !important;
+    border: 1px solid #10a2bc;
+}
+
+button.close {
+    -webkit-appearance: button;
+    color: #333;
+}
+
 [type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [type="file"], [multiple], textarea, select {
     border-color: #6b7280;
 }
