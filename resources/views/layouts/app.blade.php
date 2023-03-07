@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8" />
-        <title>{{ config('app.name', 'Ochenuel') }}</title>
+        <title>@isset($title){{ $title }} -@endisset Ochenuel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Theophilus Aika" name="author">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -244,6 +244,13 @@
                                 <a href="{{ route('manager.bikeshare.index') }}">
                                     <i class="icofont-bicycle-alt-1"></i>
                                     <span>Bike Share</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.contact.index') }}">
+                                    <i class="icofont-ui-messaging"></i>
+                                    <span>Contact Messages</span>
                                 </a>
                             </li>
                             

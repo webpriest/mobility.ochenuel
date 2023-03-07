@@ -7615,7 +7615,7 @@ img{
     color: #555555;
     line-height: 32px;
     padding: 15px 30px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #d2cece;
     background-color: #f1f1f1;
     font-weight: 400;
     height: 64px;
@@ -7700,8 +7700,9 @@ img{
 	text-align: center;
 	font-size: 18px;
 	line-height: 40px;
-	background-color: #1c94d2;
+	background-color: #d10a11;
 	color: #ffffff;
+	border-radius: 50%;
 }
 
 .contact-page-section .contact-info li a{

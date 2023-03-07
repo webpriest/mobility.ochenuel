@@ -18,7 +18,7 @@
         <link href="{{ asset('assets/css/icofont/icofont.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet">
         <!--Color Switcher Mockup-->
-        {{-- <link href="{{ asset('assets/css/color-switcher-design.css') }}" rel="stylesheet"> --}}
+        <link href="{{ asset('assets/css/color-switcher-design.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
         @livewireStyles
@@ -30,14 +30,51 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    <div class="preloader"></div>
+    {{-- <div class="preloader"></div> --}}
  	<!-- Header span -->
 
     <!-- Header Span -->
     <span class="header-span style-two"></span>
 
     <!-- Main Header-->
-    @include('layouts.partials._navigation')
+    <header class="main-header header-style-two alternate">
+
+		<div class="header-top">
+			<div class="auto-container">
+				<div class="clearfix">
+
+					<div class="top-left pull-left">
+						<div class="text">info@ochenuel.com.ng</div>
+					</div>
+
+					<div class="pull-right">
+						<ul class="social-links">
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+
+						<a href="#" class="theme-btn register-btn">Join Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        @include('layouts.partials._navigation')
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+
+            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{ asset('storage/images/logo.png') }}" alt="" title=""></a></div>
+
+                <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+            </nav>
+        </div><!-- End Mobile Menu -->
+    </header>
     <!--End Main Header -->
 
 	<!-- Banner Section Two -->
@@ -138,6 +175,22 @@
 
 </div>
 <!--End pagewrapper-->
+
+<!-- Color Palate / Color Switcher -->
+<div class="color-palate">
+    <div class="color-trigger">
+        <i class="fa fa-cog"></i>
+    </div>
+    <div class="color-palate-head">
+        <h6>Choose Your Demo</h6>
+    </div>
+    <ul class="box-version option-box"> <li>Full width</li> <li class="box">Boxed</li> </ul>
+    <ul class="rtl-version option-box"> <li>LTR Version</li> <li class="rtl">RTL Version</li> </ul>
+    <div class="palate-foo">
+        <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
+    </div>
+    <a href="#" class="purchase-btn">Purchase now</a>
+</div>
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-double-up"></span></div>

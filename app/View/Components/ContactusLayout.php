@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class GuestLayout extends Component
+class ContactusLayout extends Component
 {
     public $title;
     
@@ -18,7 +18,7 @@ class GuestLayout extends Component
     {
         $this->title = $title;
     }
-    
+
     /**
      * Get the view / contents that represents the component.
      *
@@ -26,6 +26,6 @@ class GuestLayout extends Component
      */
     public function render()
     {
-        return view('layouts.guest');
+        return view('layouts.contactus');
     }
 }

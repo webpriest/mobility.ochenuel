@@ -6,3 +6,8 @@ figure.image figcaption {
     padding: 3px 5px;
     font-weight: 700;
 }
+
+.page-title {
+    padding: 60px 0;
+    background-position: left bottom;
+}

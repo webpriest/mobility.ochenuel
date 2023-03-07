@@ -1,4 +1,4 @@
-<x-front-layout>
+<x-front-layout title="Home">
     <section class="banner-section-two" style="background-image: url(/storage/images/background/home.webp);">
 		<div class="auto-container">
 			<div class="outer-container">

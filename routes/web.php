@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Manager\BikeshareController;
 use App\Http\Controllers\Manager\DashboardController;
+use App\Http\Controllers\Manager\ContactAdminController;
 use App\Http\Controllers\Manager\BikeshareGalleryController;
 
 /*
@@ -19,6 +21,7 @@ use App\Http\Controllers\Manager\BikeshareGalleryController;
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 
 Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
     Route::get('/', DashboardController::class)->name('dashboard');
@@ -39,6 +42,13 @@ Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
         Route::get('/{bikeshare}', [BikeshareGalleryController::class, 'index'])->name('manager.bikeshare.gallery.index');
         Route::post('/new', [BikeshareGalleryController::class, 'store'])->name('manager.bikeshare.gallery.store');
         Route::delete('/{gallery}', [BikeshareGalleryController::class, 'destroy'])->name('manager.bikeshare.gallery.destroy');
+    });
+
+    // Contact messages
+    Route::group(['prefix'=>'contact'], function(){
+        Route::get('/', [ContactAdminController::class, 'index'])->name('manager.contact.index');
+        Route::get('/{contact}', [ContactAdminController::class, 'show'])->name('manager.contact.show');
+        Route::delete('/{contact}', [ContactAdminController::class, 'destroy'])->name('manager.contact.destroy');
     });
 });
 
