@@ -22,7 +22,7 @@
         <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
         @livewireStyles
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/js/app.js'])
     </head>
 
 <body>

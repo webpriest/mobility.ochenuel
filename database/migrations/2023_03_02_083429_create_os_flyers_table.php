@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('os_flyers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('open_street_id')->constrained();
+            $table->foreignId('open_street_event_id')->constrained();
             $table->string('filename');
             $table->string('description')->nullable();
             $table->timestamps();

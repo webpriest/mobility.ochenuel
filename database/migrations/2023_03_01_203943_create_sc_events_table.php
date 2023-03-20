@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('country_id')->default(162);
             $table->date('event_date')->nullable();
             $table->integer('days')->nullable();
-            $table->string('period')->nullable();
+            $table->time('event_time')->nullable();
             $table->timestamps();
         });
     }

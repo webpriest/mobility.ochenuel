@@ -17,6 +17,7 @@ class ContactAdminController extends Controller
 
     public function show(Contact $contact)
     {
+        $contact->update(['read_at' => now()]);
         return view('manager.contact.show', compact('contact'));
     }
 

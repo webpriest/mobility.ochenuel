@@ -37,6 +37,7 @@
                             <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                 <tr>
+                                    <th></th>
                                     <th>Date</th>
                                     <th>Name</th>
                                     <th>Message</th>
@@ -45,13 +46,15 @@
                                 </thead>
                                 <tbody>
                                     @foreach($contacts as $contact)
-                                        <tr>
+                                        <tr class="{{ $contact->read_at ? '' : 'bold' }}">
+                                            <td></td>
                                             <td>
-                                                {{ $contact->created_at->format('F d, Y') }}>
+                                                {{ $contact->created_at->format('F d, Y') }}
                                             </td>
                                             <td>
-                                                <strong>{{ $contact->name }}</strong><br>
-                                                <small>{{ $contact->read_at->format('F d, Y') }}</small>
+                                                <a href="{{ route('manager.contact.show', $contact) }}" title="View">
+                                                {{ $contact->name }}
+                                                </a>
                                             </td>
                                             <td>{{ Str::limit($contact->message, 100, '...') }}</td>
                                             <td>

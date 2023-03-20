@@ -15,4 +15,9 @@ class ScFlyer extends Model
     {
         return $this->belongsTo(ScEvent::class);
     }
+
+    public function photo()
+    {
+        return $this->filename ? asset('storage/'.$this->filename) : null;
+    }
 }

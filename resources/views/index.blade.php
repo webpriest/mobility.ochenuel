@@ -1,44 +1,5 @@
 <x-front-layout title="Home">
-    <section class="banner-section-two" style="background-image: url(/storage/images/background/home.webp);">
-		<div class="auto-container">
-			<div class="outer-container">
-				<div class="content">
-					<div class="upper-content">
-						<div class="title">Sustainable Urban Mobility Course</div>
-						<h1>SUMCOURSE <span>| 2023</span></h1>
-						<h2>Conference Hall<span>Open University, Abuja, Nigeria</span></h2>
-					</div>
-					<div class="lower-content">
-						<div class="row clearfix">
-							<div class="column col-lg-4 col-md-4 col-sm-12">
-								<div class="lower-title">when ?</div>
-								<div class="date">06 - 10 March, 2023</div>
-							</div>
-							<div class="column col-lg-4 col-md-4 col-sm-12">
-								<div class="lower-title">where ?</div>
-								<div class="date">Open University, Abuja</div>
-							</div>
-							<div class="column col-lg-4 col-md-4 col-sm-12">
-								<div class="lower-title">hosted by</div>
-								<div class="date">Ochenuel Mobility</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Banner Section Two -->
-
-	<!-- Coming Soon -->
-    <section class="coming-soon-section-two">
-        <div class="auto-container">
-            <div class="outer-box">
-                <div class="time-counter"><div class="time-countdown clearfix" data-countdown="03/06/2023"></div></div>
-            </div>
-        </div>
-    </section>
-    <!-- End Coming Soon -->
+    <livewire:sumcourse.home.hero />
 
     <!-- About Section -->
     <section class="about-section-two">

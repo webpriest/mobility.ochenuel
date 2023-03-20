@@ -11,8 +11,8 @@ class OsFlyer extends Model
 
     protected $fillable = ['open_street_id', 'filename', 'description'];
 
-    public function open_street()
+    public function open_street_event()
     {
-        return $this->belongsTo(OpenStreet::class);
+        return $this->belongsTo(OpenStreetEvent::class);
     }
 }

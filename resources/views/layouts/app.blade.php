@@ -20,7 +20,7 @@
 
         @stack('styles')
         @livewireStyles
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/js/app.js'])
     </head>
 
     <body>
@@ -202,21 +202,21 @@
             <div class="vertical-menu">
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
-                    <a href="{{ route('dashboard') }}" class="logo logo-dark">
+                    <a href="{{ route('home') }}" class="logo logo-dark">
                         <span class="logo-sm">
                             <img src="{{ asset('storage/img/logo-sm.png') }}" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="{{ asset('storage/img/logo-dark.png') }}" alt="" height="20">
+                            <img src="{{ asset('storage/img/logo-dark.png') }}" alt="" height="35">
                         </span>
                     </a>
 
-                    <a href="{{ route('dashboard') }}" class="logo logo-light">
+                    <a href="{{ route('home') }}" class="logo logo-light">
                         <span class="logo-sm">
                             <img src="{{ asset('storage/img/logo-sm.png') }}" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="{{ asset('storage/img/logo-light.png') }}" alt="" height="20">
+                            <img src="{{ asset('storage/img/logo-light.png') }}" alt="" height="35">
                         </span>
                     </a>
                 </div>
@@ -239,11 +239,68 @@
                                     <span>Dashboard</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="javascript:void(0);" class="has-arrow waves-effect">
+                                    <i class="icofont-book-alt"></i>
+                                    <span>SUMCourse</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                        <a href="{{ route('manager.sumcourse.index') }}">
+                                            <i class="icofont-meeting-add"></i>
+                                            SUMCourse Event
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('manager.sumcourse.report.index') }}">
+                                            <i class="icofont-document-folder"></i>
+                                            SUMCourse Report
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.speaker.index') }}">
+                                    <i class="icofont-user-alt-4"></i>
+                                    <span>Speakers</span>
+                                </a>
+                            </li>
                             
                             <li>
                                 <a href="{{ route('manager.bikeshare.index') }}">
                                     <i class="icofont-bicycle-alt-1"></i>
                                     <span>Bike Share</span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="javascript:void(0);" class="has-arrow waves-effect">
+                                    <i class="icofont-bicycle-alt-1"></i>
+                                    <span>OpenStreets</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                        <a href="{{ route('manager.openstreet.index') }}">
+                                            <i class="icofont-document-folder"></i>
+                                            <span>Main</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('manager.openstreet.event.index') }}">
+                                            <i class="icofont-bicycle"></i>
+                                            OpenStreet Events
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.expertise.index') }}">
+                                    <i class="icofont-unique-idea"></i>
+                                    <span>Expertise</span>
                                 </a>
                             </li>
                             
@@ -280,7 +337,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Designer: <a href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                                    Designer: <a href="https://philuxsystems.com/" target="_blank" class="text-reset">Philux Digital Systems</a>
                                 </div>
                             </div>
                         </div>

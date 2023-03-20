@@ -12,6 +12,11 @@ class OpenStreetEvent extends Model
 
     protected $fillable = ['title', 'location', 'photo', 'os_date', 'os_time', 'hosted'];
 
+    protected $casts = [
+        'os_date' => 'date',
+        'os_time' => 'datetime'
+    ];
+
     public function getRouteKeyName()
     {
         return 'slug';
@@ -30,6 +35,11 @@ class OpenStreetEvent extends Model
     public function os_reports()
     {
         return $this->hasMany(OsReport::class);
+    }
+
+    public function os_flyers()
+    {
+        return $this->hasMany(OsFlyer::class);
     }
 
     public static function booted()

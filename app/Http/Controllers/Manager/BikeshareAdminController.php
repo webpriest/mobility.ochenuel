@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\BikeShareStoreRequest;
 use App\Http\Requests\BikeShareUpdateRequest;
 
-class BikeshareController extends Controller
+class BikeshareAdminController extends Controller
 {
     public function index()
     {

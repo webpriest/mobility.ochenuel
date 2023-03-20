@@ -17,12 +17,10 @@
         <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/icofont/icofont.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet">
-        <!--Color Switcher Mockup-->
-        {{-- <link href="{{ asset('assets/css/color-switcher-design.css') }}" rel="stylesheet"> --}}
         <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
         @livewireStyles
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/js/app.js'])
     </head>
 
 <body>

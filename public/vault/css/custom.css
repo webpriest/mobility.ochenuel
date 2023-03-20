@@ -2,6 +2,11 @@
     padding: 20px 1.5rem 0;
 }
 
+.bold {
+    font-weight: bold !important;
+    background: #fff4f5;
+}
+
 [class*="icofont-"] {
     font-weight: bold;
 }
@@ -28,8 +33,19 @@ button.close {
     color: #333;
 }
 
-[type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [type="file"], [multiple], textarea, select {
+[type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [type="file"], [multiple], textarea, select.form-select {
     border-color: #6b7280;
+}
+
+.select2-container--default .select2-selection--single {
+    border-color: #6b7280 !important;
+    padding-top: 5px;
+    min-height: 40px;
+    line-height: none;
+}
+
+.logo {
+    line-height: 10px;
 }
 
 .error {
@@ -38,4 +54,8 @@ button.close {
 
 form.delete-form {
     display: inline-block;
+}
+
+.pdf-doc {
+    height: 800px;
 }

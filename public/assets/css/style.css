@@ -6588,7 +6588,7 @@ img{
 
 .news-block .post-info li span{
 	margin-right: 5px;
-	color: #1d95d2;
+	color: #d10a11;
 }
 
 .news-block h4{
@@ -6736,11 +6736,11 @@ img{
 	margin-bottom: 15px;
 }
 
-.blog-single .lower-content p{
+.news-block .lower-content p {
 	font-size: 16px;
 	line-height: 30px;
 	margin-bottom: 30px;
-	color: #888888;
+	color: #666;
 }
 
 .blog-single .lower-content blockquote{

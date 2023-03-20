@@ -42,28 +42,18 @@
 
                     <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                         <ul class="navigation clearfix">
-                            <li class="current"><a href="#">Home</a></li>
-                            <li class="dropdown"><a href="#">About</a>
+                            <li class="{{ Route::is('home') ? 'current' : ''}}"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="dropdown {{ Route::is('about.*') ? 'current' : ''}}"><a href="javascript:void(0)">About</a>
                                 <ul>
-                                    <li><a href="#">Who We Are</a></li>
-                                    <li><a href="#">Vision & Mission</a></li>
-                                    <li><a href="#">Administrative Structure</a></li>
+                                    <li><a href="{{ route('about.index') }}">Who We Are</a></li>
+                                    <li><a href="{{ route('about.vision') }}">Vision & Mission</a></li>
+                                    <li><a href="{{ route('about.administration') }}">Administrative Structure</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Expertise</a>
-                                <ul>
-                                    <li><a href="#">Cycling & Walking</a></li>
-                                    <li><a href="#">Training and Education</a></li>
-                                    <li><a href="#">Intelligent Transport System</a></li>
-                                    <li><a href="#">Public Transport</a></li>
-                                    <li><a href="#">Transport Safety</a></li>
-                                    <li><a href="#">Climate and Sustainability</a></li>
-                                    <li><a href="#">Transport & Traffic Engineering</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Bike Share</a></li>
-                            <li><a href="#">SUMCourse</a></li>
-                            <li><a href="#">OpenStreets</a></li>
+                            <livewire:front.navigation.expert />
+                            <li class="{{ Route::is('bikeshare.index') ? 'current' : ''}}"><a href="{{ route('bikeshare.index') }}">Bike Share</a></li>
+                            <li class="{{ Route::is('sumcourse.*') ? 'current' : ''}}"><a href="{{ route('sumcourse.index') }}">SUMCourse</a></li>
+                            <li class="{{ Route::is('openstreet.*') ? 'current' : ''}}"><a href="{{ route('openstreet.index') }}">OpenStreets</a></li>
                             <li class="dropdown"><a href="#">Resources</a>
                                 <ul>
                                     <li><a href="#">News Articles</a></li>
@@ -72,7 +62,7 @@
                                     <li><a href="#">+ More Resources</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                            <li class="{{ Route::is('contact.index') ? 'current' : ''}}"><a href="{{ route('contact.index') }}">Contact</a></li>
                         </ul>
                     </div>
                 </nav>

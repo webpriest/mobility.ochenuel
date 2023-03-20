@@ -22,11 +22,6 @@ class OpenStreet extends Model
         return $this->photo ? asset('storage/'.$this->photo) : null;
     }
 
-    public function os_flyers()
-    {
-        return $this->hasMany(OsFlyer::class);
-    }
-
     public static function booted()
     {
         static::creating(function($os){

@@ -10,4 +10,6 @@ class Contact extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'email', 'subject', 'message', 'read_at'];
+
+    protected $casts = ['read_at' => 'timestamp'];
 }
