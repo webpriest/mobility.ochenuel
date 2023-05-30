@@ -19,7 +19,7 @@ class Schedule extends Model
 
     public static function booted()
     {
-        static::creating(function($schedule){
+        static::creating(function($schedule) {
             $schedule->token = Str::random();
         });
     }

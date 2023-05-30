@@ -11,22 +11,22 @@ class Flyer extends Component
 {
     use WithFileUploads;
     
-    public $sumcourse, $flyer, $photo, $description, $flyerId;
+    public $sumcourse, $flyer, $pdf, $description, $flyerId;
 
     protected $listeners = [
-        'photoUploaded' => '$refresh'
+        'pdfUploaded' => '$refresh'
     ];
 
     protected $rules = [
         'description' => ['required'],
-        'photo' => ['required']
+        'pdf' => ['required', 'file']
     ];
 
     public function messages()
     {
         return [
-            'description.required' => 'Give the photo a caption',
-            'photo.required' => 'Upload a photo'
+            'description.required' => 'Give the flyer a caption',
+            'pdf.required' => 'Upload a PDF file'
         ];
     }
 
@@ -35,9 +35,9 @@ class Flyer extends Component
         $this->flyer = $this->sumcourse->sc_flyer;
     }
 
-    public function photo()
+    public function pdf()
     {
-        return $this->photo ? $this->photo->temporaryUrl() : asset('storage/img/image-upload-bg.webp');
+        return $this->pdf ? asset('storage/img/pdf-upload-bg.webp') : asset('storage/img/image-upload-bg.webp');
     }
 
     public function store()
@@ -45,9 +45,9 @@ class Flyer extends Component
         $this->validate();
 
         $sumcourse = $this->sumcourse;
-       if($this->photo) {
+       if($this->pdf) {
             $gallery = $sumcourse->sc_flyer()->create([
-                'filename' => $this->photo->store('images/sumcourse/flyer', 'public'),
+                'filename' => $this->pdf->store('images/sumcourse/flyer', 'public'),
                 'description' => $this->description
             ]);
         }
@@ -57,7 +57,7 @@ class Flyer extends Component
             ]);
         }
 
-        session()->flash('success', 'Photo uploaded');
+        session()->flash('success', 'Flyer uploaded');
         $this->reset();
 
         return redirect()->route('manager.sumcourse.flyer.index', $sumcourse);

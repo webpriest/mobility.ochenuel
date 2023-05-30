@@ -32,8 +32,8 @@
                     </td>
                     <td width="100">
                         <a href="{{ route('manager.openstreet.event.show', $event) }}" class="btn btn-outline-success btn-sm" title="View"><i class="icofont-eye"></i></a>
-                        {{-- <a href="{{ route('manager.openstreet.gallery.index', $event) }}" class="btn btn-outline-info btn-sm" title="Gallery"><i class="icofont-camera"></i></a>
-                        <a href="{{ route('manager.openstreet.flyer.index', $event) }}" class="btn btn-outline-success btn-sm" title="Flyer"><i class="icofont-ui-image"></i></a> --}}
+                        <a href="{{ route('manager.openstreet.gallery.index', $event) }}" class="btn btn-outline-info btn-sm" title="Gallery"><i class="icofont-camera"></i></a>
+                        {{-- <a href="{{ route('manager.openstreet.flyer.index', $event) }}" class="btn btn-outline-success btn-sm" title="Flyer"><i class="icofont-ui-image"></i></a> --}}
                         <a href="{{ route('manager.openstreet.event.edit', $event) }}" class="btn btn-outline-warning btn-sm"><i class="icofont-edit" title="Edit"></i></a>
                         <form class="delete-form" method="POST" action="{{ route('manager.openstreet.event.destroy', $event)}}">
                             @method('delete')

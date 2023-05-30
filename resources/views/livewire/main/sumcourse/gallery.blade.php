@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     @if($galleries)
-                    <h4 class="card-title">{{ isset($galleries) ? $galleries->first()->sc_event->theme : '' }} photos</h4>
+                    <h4 class="card-title">{{ $galleries->isNotEmpty() ? $galleries->first()->sc_event->theme : '' }} photos</h4>
                     
                     <div class="popup-gallery">
                         <div class="row">

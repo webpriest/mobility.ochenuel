@@ -15,7 +15,7 @@
                         <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
 
-                    <a href="#" class="theme-btn register-btn">Join Us</a>
+                    <a href="{{ route('registration.index') }}" class="theme-btn register-btn">Join Us</a>
                 </div>
             </div>
         </div>
@@ -56,8 +56,8 @@
                             <li class="{{ Route::is('openstreet.*') ? 'current' : ''}}"><a href="{{ route('openstreet.index') }}">OpenStreets</a></li>
                             <li class="dropdown"><a href="#">Resources</a>
                                 <ul>
-                                    <li><a href="#">News Articles</a></li>
-                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="{{ route('news.index') }}">News Articles</a></li>
+                                    <li><a href="{{ route('gallery.index') }}">Gallery</a></li>
                                     <li><a href="#">Publications</a></li>
                                     <li><a href="#">+ More Resources</a></li>
                                 </ul>
@@ -72,7 +72,7 @@
                 <div class="outer-box">
                     <!-- Button Box -->
                     <div class="btn-box">
-                        <a href="#" class="theme-btn btn-style-one"><span class="btn-title">Register Now</span></a>
+                        <a href="{{ route('registration.index') }}" class="theme-btn btn-style-one"><span class="btn-title">Register Now</span></a>
                     </div>
                 </div>
             </div>

@@ -7,15 +7,15 @@
         <div class="col-lg-4">
             <form wire:submit.prevent="store" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="photo">
-                        <img src="{{ $this->photo() }}" width="100%" style="cursor: pointer;" alt="upload photo">
+                    <label for="pdf">
+                        <img src="{{ $this->pdf() }}" width="100%" style="cursor: pointer;" alt="upload pdf">
                     </label>
-                    <input type="file" name="photo" id="photo" class="sr-only" wire:model="photo">
-                    @error('photo')
+                    <input type="file" name="pdf" id="pdf" class="sr-only" wire:model="pdf">
+                    @error('pdf')
                         <span class="error">{{ $message }}</span>
                     @enderror
                     <div>
-                        <label class="form-label">Click to select flyer</label>
+                        <label class="form-label">Click to select flyer (PDF)</label>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@
                             <div class="col-md-12">
                                 <div class="mt-4">
                                     <div class="img-fluid">
-                                        <img src="{{ $flyer->photo() }}" alt="Bike share" class="img-fluid d-block">
+                                        <img src="{{ $flyer->photo() }}" alt="SUMCOURSE Flyer" class="img-fluid d-block">
                                     </div>
                                 </div>
                                 <div class="mt-2 text-center">

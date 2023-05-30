@@ -15,4 +15,22 @@ class LectureDoc extends Model
     {
         return $this->belongsTo(Lecture::class);
     }
+
+    public function pdf()
+    {
+        return $this->filename ? asset('storage/'.$this->filename) : null;
+    }
+
+    public function size()
+    {
+        if($this->filesize >= 1000 && $this->filesize < 1000000) {
+            return round($this->filesize/1000) . "KB";
+        }
+        elseif($this->filesize >= 1000000 && $this->filesize < 1000000000) {
+            return round($this->filesize/1000000) . "MB";
+        }
+        else {
+            return "Large file";
+        }
+    }
 }

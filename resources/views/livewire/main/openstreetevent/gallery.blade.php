@@ -35,8 +35,8 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
-                    @if($galleries)
-                    <h4 class="card-title">{{ isset($galleries) ? $galleries->first()->sc_event->theme : '' }} photos</h4>
+                    @if($galleries->isNotEmpty())
+                    <h4 class="card-title">{{ isset($galleries) ? $galleries->first()->open_street_event->title : '' }} photos</h4>
                     
                     <div class="popup-gallery">
                         <div class="row">

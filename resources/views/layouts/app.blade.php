@@ -90,7 +90,7 @@
                             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="uil-bell"></i>
-                                <span class="badge bg-danger rounded-pill">3</span>
+                                <span class="badge bg-danger rounded-pill">1</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                                 aria-labelledby="page-header-notifications-dropdown">
@@ -110,62 +110,15 @@
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar-xs">
                                                     <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                                        <i class="uil-shopping-basket"></i>
+                                                        <i class="uil-user"></i>
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your order is placed</h6>
+                                                <h6 class="mb-1">Participant registered</h6>
                                                 <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);" class="text-reset notification-item">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{ asset('storage/img/users/avatar-3.jpg') }}" class="rounded-circle avatar-xs" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">James Lemire</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">It will seem like simplified English.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hour ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="javascript:void(0);" class="text-reset notification-item">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-shrink-0 me-3">
-                                                <div class="avatar-xs">
-                                                    <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                        <i class="uil-truck"></i>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your item is shipped</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="javascript:void(0);" class="text-reset notification-item">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img src="{{ asset('storage/img/users/avatar-4.jpg') }}" class="rounded-circle avatar-xs" alt="user-pic">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-1">Salena Layfield</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                                    <p class="mb-1">A participant has just registered</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 hours ago</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -253,12 +206,25 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('manager.sumcourse.lecture.index') }}">
+                                            <i class="icofont-presentation"></i>
+                                            SUMCourse Lecture
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('manager.sumcourse.report.index') }}">
                                             <i class="icofont-document-folder"></i>
                                             SUMCourse Report
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.registration.index') }}">
+                                    <i class="icofont-ui-user-group"></i>
+                                    <span>Registered Participants</span>
+                                </a>
                             </li>
                             
                             <li>
@@ -294,13 +260,33 @@
                                             OpenStreet Events
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icofont-image"></i>
+                                            OpenStreet Gallery
+                                        </a>
+                                    </li>
                                 </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.news.index') }}">
+                                    <i class="icofont-newspaper"></i>
+                                    <span>News</span>
+                                </a>
                             </li>
                             
                             <li>
                                 <a href="{{ route('manager.expertise.index') }}">
                                     <i class="icofont-unique-idea"></i>
                                     <span>Expertise</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="{{ route('manager.partner.index') }}">
+                                    <i class="icofont-users"></i>
+                                    <span>Partners</span>
                                 </a>
                             </li>
                             

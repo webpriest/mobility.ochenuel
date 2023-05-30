@@ -25,4 +25,9 @@ class SumCourseReportController extends Controller
     {
         return view('manager.sumcourse.sc-report.edit', compact('report'));
     }
+
+    public function image(ScReport $report)
+    {
+        return view('manager.sumcourse.sc-report.image', compact('report'));
+    }
 }

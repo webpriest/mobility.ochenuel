@@ -25,7 +25,10 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-8">
                                 <h4 class="card-title">{{ $report->title }}</h4>
-                                <a href="{{ route('manager.sumcourse.report.index') }}" class="btn btn-primary"><i class="icofont-reply"></i> Back to SUMCourse Reports</a>
+                                <div>
+                                    <a href="{{ route('manager.sumcourse.report.image', $report) }}" class="btn btn-warning"><i class="icofont-image"></i> Add Cover Photo</a>
+                                    <a href="{{ route('manager.sumcourse.report.index') }}" class="btn btn-primary"><i class="icofont-reply"></i> Back to SUMCourse Reports</a>
+                                </div>
                             </div>
 
                             <div class="pdf-doc">

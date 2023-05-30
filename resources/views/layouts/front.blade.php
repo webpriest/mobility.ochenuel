@@ -20,6 +20,7 @@
         <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
 
         @livewireStyles
+        @stack('styles')
         @vite(['resources/js/app.js'])
     </head>
 
@@ -57,7 +58,7 @@
                                         <a href="{{ route('home') }}"><img src="{{ asset('storage/images/logo-white.png') }}" alt="" /></a>
                                     </div>
                                     <div class="text">
-                                        <p>Ochenuel Mobility is a multi modal sustainable transport initiative covering road, rail, tram, cable, inland waterways transportation syatems.</p>
+                                        <p>Ochenuel Mobility is a multi modal sustainable transport initiative covering road, rail, tram, cable, inland waterways transportation systems.</p>
                                     </div>
                                     <ul class="social-icon-one social-icon-colored">
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -71,14 +72,7 @@
                             <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget useful-links">
                                     <h2 class="widget-title">Core Expertise</h2>
-                                    <ul class="user-links">
-                                        <li><a href="#">Transport & Traffic Engineering</a></li>
-                                        <li><a href="#">Bike Share</a></li>
-                                        <li><a href="#">Training & Education</a></li>
-                                        <li><a href="#">Public Transport</a></li>
-                                        <li><a href="#">ITS</a></li>
-                                        <li><a href="#">Transport Safety</a></li>
-                                    </ul>
+                                    <livewire:front.footer.expertises />
                                 </div>
                             </div>
                         </div>
@@ -152,5 +146,6 @@
 <!-- Color Setting -->
 <script src="{{ asset('assets/js/color-settings.js') }}"></script>
 @livewireScripts
+@stack('scripts')
 </body>
 </html>

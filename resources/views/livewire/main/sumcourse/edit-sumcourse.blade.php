@@ -36,7 +36,7 @@
 
             <div class="mb-3">
                 <label class="form-label" for="country_id">Country</label><br>
-                <select wire:model.defer="country_id" style="width: 100%" id="country_id">
+                <select wire:model.defer="country_id" style="width: 100%" class="form-select" id="country_id">
                     <option value="">Choose</option>
                     @foreach($countries as $country)
                         <option value="{{ $country->id }}">{{ $country->country }}</option>
@@ -79,12 +79,10 @@
         </div>
         <div class="col-md-4">
             <div class="" wire:ignore>
-                <label class="form-label" for="badge">Upload event badge</label>
-                <input type="file" wire:model.defer="badge" class="dropify" data-allowed-file-extensions="jpeg jpg png webp" 
-                @if($sumcourse->badge)
-                    data-default-file="{{ $sumcourse->badge() }}"
-                @endif
-                >
+                <label for="badge" style="cursor: pointer;">
+                    <img class="card-img img-fluid" src="{{ asset('storage/img/pdf-upload-bg.webp') }}" alt="PDF">
+                </label>
+                <input type="file" name="pdf" wire:model="badge" id="badge" class="sr-only" accept="application/pdf">
                 @error('badge')
                     <span class="error">{{ $message }}</span>
                 @enderror

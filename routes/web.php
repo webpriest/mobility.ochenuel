@@ -2,15 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\BikeshareController;
 use App\Http\Controllers\ExpertiseController;
 use App\Http\Controllers\SumCourseController;
 use App\Http\Controllers\OpenstreetController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\OpenstreetEventController;
 use App\Http\Controllers\Manager\DashboardController;
+use App\Http\Controllers\Manager\NewsAdminController;
+use App\Http\Controllers\Manager\NewsGalleryController;
 use App\Http\Controllers\Manager\ContactAdminController;
+use App\Http\Controllers\Manager\PartnerAdminController;
 use App\Http\Controllers\Manager\SpeakerAdminController;
 use App\Http\Controllers\Manager\BikeshareAdminController;
 use App\Http\Controllers\Manager\ExpertiseAdminController;
@@ -20,6 +28,11 @@ use App\Http\Controllers\Manager\OpenstreetAdminController;
 use App\Http\Controllers\Manager\SumCourseReportController;
 use App\Http\Controllers\Manager\BikeshareGalleryController;
 use App\Http\Controllers\Manager\SumCourseGalleryController;
+use App\Http\Controllers\Manager\SumCourseLectureController;
+use App\Http\Controllers\Manager\OpenstreetGalleryController;
+use App\Http\Controllers\Manager\RegistrationAdminController;
+use App\Http\Controllers\Manager\SumCourseLectureDocController;
+use App\Http\Controllers\SumCourseReportController as SCReport;
 use App\Http\Controllers\Manager\OpenstreetEventAdminController;
 
 /*
@@ -39,20 +52,41 @@ Route::group(['prefix'=>'about'], function(){
     Route::get('/vision-and-mission', [AboutController::class, 'vision'])->name('about.vision');
     Route::get('/administrative-structure', [AboutController::class, 'administration'])->name('about.administration');
 });
+
 Route::group(['prefix'=>'sumcourse'], function(){
     Route::get('/', [SumCourseController::class, 'index'])->name('sumcourse.index');
     Route::get('/{sumcourse}', [SumCourseController::class, 'show'])->name('sumcourse.show');
+    Route::get('/flyer/{flyer}', [SumCourseController::class, 'flyer'])->name('sumcourse.flyer');
+    Route::get('/flyer/download/{flyer}', [SumCourseController::class, 'download'])->name('sumcourse.flyer.download');
 });
+
+Route::group(['prefix'=>'sumcourse/report'], function(){
+    Route::get('/{sumcourse}', [SCReport::class, 'index'])->name('sumcourse.report.index');
+    Route::get('/show/{report}', [SCReport::class, 'show'])->name('sumcourse.report.show');
+    Route::get('/download/{report}', [SCReport::class, 'download'])->name('sumcourse.report.download');
+});
+
+Route::get('/gallery', GalleryController::class)->name('gallery.index');
+
 Route::get('/bikeshare', BikeshareController::class)->name('bikeshare.index');
 Route::get('/openstreet', OpenstreetController::class)->name('openstreet.index');
-Route::get('/expertise', [ExpertiseController::class, 'index'])->name('expertise.index');
-Route::get('/expertise/{expertise}', [ExpertiseController::class, 'show'])->name('expertise.show');
+
+Route::get('/openstreet/event', [OpenstreetEventController::class, 'index'])->name('openstreet.event.index');
+Route::get('/openstreet/event/{openstreetevent}', [OpenstreetEventController::class, 'show'])->name('openstreet.event.show');
+Route::get('/openstreet/event/flyer/{flyer}', [OpenstreetEventController::class, 'flyer'])->name('openstreet.event.flyer');
+
+Route::get('/speakers', [SpeakerController::class, 'index'])->name('speaker.index');
+Route::get('/speakers/{speaker}', [SpeakerController::class, 'show'])->name('speaker.show');
+
+Route::get('/expertise/{expertise}', ExpertiseController::class)->name('expertise.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::get('/the/dove', function(){
-    return view('dove');
-})->name('dove');
 
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/{post}', [NewsController::class, 'show'])->name('news.show');
 
+Route::get('/registration', RegistrationController::class)->name('registration.index');
+
+// ADMIN
 Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
     Route::get('/', DashboardController::class)->name('dashboard');
 
@@ -77,10 +111,29 @@ Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
         Route::get('/{sumcourse}', [SumCourseFlyerController::class, 'index'])->name('manager.sumcourse.flyer.index');
     });
 
+    // SUMCourse Lecture
+    Route::group(['prefix'=>'sumcourse/event/lecture'], function(){
+        Route::get('/', [SumCourseLectureController::class, 'index'])->name('manager.sumcourse.lecture.index');
+        Route::get('/create/{sumcourse}/lecture', [SumCourseLectureController::class, 'create'])->name('manager.sumcourse.lecture.create');
+        Route::get('/{sumcourse}', [SumCourseLectureController::class, 'lectures'])->name('manager.sumcourse.lecture.lectures');
+        Route::get('/presentation/{lecture}', [SumCourseLectureController::class, 'show'])->name('manager.sumcourse.lecture.show');
+    });
+
+    // SUMCourse Lecture Document
+    Route::group(['prefix'=>'sumcourse/event/lecture/document'], function(){
+        Route::get('/{doc}', SumCourseLectureDocController::class)->name('manager.sumcourse.lecturedoc.preview');
+    });
+
     // SUMCourse Report
     Route::group(['prefix'=>'sumcourse/event/report'], function(){
         Route::get('/', [SumCourseReportController::class, 'index'])->name('manager.sumcourse.report.index');
         Route::get('/{report}', [SumCourseReportController::class, 'show'])->name('manager.sumcourse.report.show');
+        Route::get('/cover-image/{report}', [SumCourseReportController::class, 'image'])->name('manager.sumcourse.report.image');
+    });
+
+    // Partners
+    Route::group(['prefix'=>'partner'], function(){
+        Route::get('/', PartnerAdminController::class)->name('manager.partner.index');
     });
 
     // Bike Share
@@ -141,6 +194,36 @@ Route::group(['prefix'=>'main', 'middleware'=>['auth']], function(){
         Route::get('/{openstreetevent}', [OpenstreetEventAdminController::class, 'show'])->name('manager.openstreet.event.show');
         Route::get('/{openstreetevent}/edit', [OpenstreetEventAdminController::class, 'edit'])->name('manager.openstreet.event.edit');
         Route::delete('/{openstreetevent}', [OpenstreetEventAdminController::class, 'destroy'])->name('manager.openstreet.event.destroy');
+    });
+
+    // OpenStreet Event Gallery
+    Route::group(['prefix'=>'event/openstreet/gallery'], function(){
+        Route::get('/{openstreetevent}', [OpenstreetGalleryController::class, 'index'])->name('manager.openstreet.gallery.index');
+        Route::delete('/{gallery}', [OpenstreetGalleryController::class, 'destroy'])->name('manager.openstreet.gallery.destroy');
+    });
+
+    // News
+    Route::group(['prefix'=>'news'], function(){
+        Route::get('/', [NewsAdminController::class, 'index'])->name('manager.news.index');
+        Route::get('/create', [NewsAdminController::class, 'create'])->name('manager.news.create');
+        Route::get('/{post}', [NewsAdminController::class, 'show'])->name('manager.news.show');
+        Route::post('/create', [NewsAdminController::class, 'store'])->name('manager.news.store');
+        Route::get('/{post}/edit', [NewsAdminController::class, 'edit'])->name('manager.news.edit');
+        Route::patch('/{post}', [NewsAdminController::class, 'update'])->name('manager.news.update');
+        Route::delete('/{post}', [NewsAdminController::class, 'destroy'])->name('manager.news.destroy');
+    });
+
+    // News Gallery
+    Route::group(['prefix'=>'news/gallery'], function(){
+        Route::get('/{post}', [NewsGalleryController::class, 'index'])->name('manager.news.gallery.index');
+        Route::delete('/{gallery}', [NewsGalleryController::class, 'destroy'])->name('manager.news.gallery.destroy');
+    });
+
+    // Registered SUMCOURSE users
+    Route::group(['prefix'=>'registration'], function(){
+        Route::get('/', [RegistrationAdminController::class, 'index'])->name('manager.registration.index');
+        Route::get('/{registration}', [RegistrationAdminController::class, 'show'])->name('manager.registration.show');
+        Route::delete('/{registration}', [RegistrationAdminController::class, 'destroy'])->name('manager.registration.destroy');
     });
 
     // Contact messages

@@ -5,10 +5,13 @@ namespace App\Http\Livewire\Main\Sumcourse;
 use App\Models\Country;
 use App\Models\ScEvent;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
 class EditSumcourse extends Component
 {
+    use WithFileUploads;
+    
     public $countries, $sumcourse, $sumcourseId, $hour, $minute;
     public $theme, $sub_theme, $address, $city, $country_id, $event_date, $days, $event_time, $badge;
 
@@ -44,6 +47,16 @@ class EditSumcourse extends Component
         $this->days = $this->sumcourse->days;
 
         $this->countries = Country::get();
+    }
+
+    public function updatedBadge()
+    {
+        $this->myBadge();
+    }
+
+    public function myBadge()
+    {
+        return asset('storage/img/pdf-attached.webp');
     }
 
     public function update()

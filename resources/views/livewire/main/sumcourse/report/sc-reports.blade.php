@@ -62,7 +62,7 @@
                                 <div class="mt-4">
                                     <div class="img-fluid">
                                         <a href="{{ route('manager.sumcourse.report.show', $report) }}">
-                                        <img src="{{ asset('storage/img/pdf-attached.webp') }}" alt="SUMCourse report" class="img-fluid d-block">
+                                        <img src="{{ $report->cover_image ? asset('storage/'.$report->cover_image) : asset('storage/img/pdf-attached.webp') }}" alt="SUMCourse report" class="img-fluid d-block">
                                         </a>
                                     </div>
                                 </div>

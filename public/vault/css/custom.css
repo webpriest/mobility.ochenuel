@@ -33,7 +33,22 @@ button.close {
     color: #333;
 }
 
-[type="text"], [type="email"], [type="url"], [type="password"], [type="number"], [type="date"], [type="datetime-local"], [type="month"], [type="search"], [type="tel"], [type="time"], [type="week"], [type="file"], [multiple], textarea, select.form-select {
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[type="file"],
+[multiple],
+textarea,
+select.form-select {
     border-color: #6b7280;
 }
 
@@ -58,4 +73,22 @@ form.delete-form {
 
 .pdf-doc {
     height: 800px;
+    margin-top: 20px;
+}
+
+.text-green {
+    color: #178409;
+}
+
+.btn-primary:hover {
+    background-color: #a80f11;
+}
+
+.engaged {
+    background-color: #b3f9cb;
+}
+
+.float-end i {
+    font-size: 35px;
+    color: #d10a11;
 }

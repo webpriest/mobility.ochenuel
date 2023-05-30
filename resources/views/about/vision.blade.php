@@ -14,9 +14,30 @@
             <div class="row clearfix">
 
                 <div class="content-side col-lg-9 col-md-12 col-sm-12">
-                    <div class="blog-sidebar">
-                        <!-- News Block Three -->
+                    <div class="blog-sidebar row">
+                        <div class="feature-block-two col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon icofont-eye"></span></div>
+                                <h4><a href="javascript:void(0)">Vision</a></h4>
+                                <div class="text">To lead the development of smart and sustainable mobility in Africa.</div>
+                            </div>
+                        </div>
                         
+                        <div class="feature-block-two col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon icofont-bullseye"></span></div>
+                                <h4><a href="javascript:void(0)">Mission</a></h4>
+                                <div class="text">To be the best, most reliable and knowledge driven mobility service provider in Africa.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-block-two col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon icofont-diamond"></span></div>
+                                <h4><a href="javascript:void(0)">Core Values</a></h4>
+                                <div class="text">Honesty, Partnership, Technology.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

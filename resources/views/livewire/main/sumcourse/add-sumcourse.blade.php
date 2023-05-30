@@ -35,7 +35,7 @@
 
             <div class="mb-3">
                 <label class="form-label" for="country_id">Country</label><br>
-                <select wire:model.defer="country_id" style="width: 100%" id="country_id">
+                <select wire:model.defer="country_id" style="width: 100%" class="form-select" id="country_id">
                     <option value="">Choose</option>
                     @foreach($countries as $country)
                         <option value="{{ $country->id }}">{{ $country->country }}</option>
@@ -79,14 +79,14 @@
         <div class="col-md-4">
             <div class="" wire:ignore>
                 <label class="form-label" for="badge">Upload event badge</label>
-                <input type="file" wire:model.defer="badge" class="dropify" data-allowed-file-extensions="jpeg jpg png webp" />
+                <input type="file" wire:model="badge" class="dropify" data-allowed-file-extensions="jpeg jpg png webp pdf" />
                 @error('badge')
                     <span class="error">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="d-flex flex-wrap gap-3 mt-3">
-                <button type="submit" class="btn btn-primary  waves-effect waves-light">Submit <i class="uil uil-arrow-right ms-2"></i></button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit <i class="uil uil-arrow-right ms-2"></i></button>
             </div>
         </div>
     </div>

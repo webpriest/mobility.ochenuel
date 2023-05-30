@@ -61,6 +61,11 @@ class ScReports extends Component
         return asset('storage/img/pdf-attached.webp');
     }
 
+    public function image()
+    {
+        return $this->cover_image ? asset('storage/'.$this->cover_image) : asset('storage/img/pdf-attached.webp');
+    }
+
     public function photo()
     {
         return $this->filename ? asset('storage/img/pdf-attached.webp') : asset('storage/img/pdf-upload-bg.webp');

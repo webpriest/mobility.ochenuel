@@ -17,6 +17,11 @@ class Lecture extends Model
         return 'slug';
     }
 
+    public function sc_event()
+    {
+        return $this->belongsTo(ScEvent::class);
+    }
+
     public function speaker()
     {
         return $this->belongsTo(Speaker::class);
